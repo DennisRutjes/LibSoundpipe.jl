@@ -1,0 +1,9 @@
+name = "LibSoundpipe"
+uuid = "16c0a3be-bb2e-494c-bad3-c873802422f1"
+authors = ["Dennis Rutjes <dennis@jpoint.nl>"]
+version = "0.1.0"
+
+[deps]
+CEnum = "fa961155-64e5-5f13-b03f-caf6b980ea82"
+FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
