@@ -16,7 +16,6 @@ const kiss_fft_scalar = Float32
 const SP_FT_MAXLEN = Int32(0x01000000)
 const SP_FT_PHMASK = Int32(0x00ffffff)
 const SP_TALKBOX_BUFMAX = 1600
-const rfftw_plan = fftw_plan
 const sp_frame = Culong
 
 struct sp_auxdata
