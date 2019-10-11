@@ -1,3 +1,50 @@
+# Julia wrapper for header: openlpc.h
+# Automatically generated using Clang.jl
+
+
+function create_openlpc_encoder_state()
+    ccall((:create_openlpc_encoder_state, soundpipe), Ptr{openlpc_encoder_state}, ())
+end
+
+function init_openlpc_encoder_state(st, framelen)
+    ccall((:init_openlpc_encoder_state, soundpipe), Cvoid, (Ptr{openlpc_encoder_state}, Cint), st, framelen)
+end
+
+function openlpc_encode(in, out, st)
+    ccall((:openlpc_encode, soundpipe), Cint, (Ptr{Int16}, Ptr{Cuchar}, Ptr{openlpc_encoder_state}), in, out, st)
+end
+
+function destroy_openlpc_encoder_state(st)
+    ccall((:destroy_openlpc_encoder_state, soundpipe), Cvoid, (Ptr{openlpc_encoder_state},), st)
+end
+
+function create_openlpc_decoder_state()
+    ccall((:create_openlpc_decoder_state, soundpipe), Ptr{openlpc_decoder_state}, ())
+end
+
+function init_openlpc_decoder_state(st, framelen)
+    ccall((:init_openlpc_decoder_state, soundpipe), Cvoid, (Ptr{openlpc_decoder_state}, Cint), st, framelen)
+end
+
+function openlpc_decode(sp, in, out, st)
+    ccall((:openlpc_decode, soundpipe), Cint, (Ptr{Cint}, Ptr{Cuchar}, Ptr{Int16}, Ptr{openlpc_decoder_state}), sp, in, out, st)
+end
+
+function destroy_openlpc_decoder_state(st)
+    ccall((:destroy_openlpc_decoder_state, soundpipe), Cvoid, (Ptr{openlpc_decoder_state},), st)
+end
+
+function openlpc_sr(sr)
+    ccall((:openlpc_sr, soundpipe), Cvoid, (Cfloat,), sr)
+end
+
+function openlpc_get_encoder_state_size()
+    ccall((:openlpc_get_encoder_state_size, soundpipe), Cint, ())
+end
+
+function openlpc_get_decoder_state_size()
+    ccall((:openlpc_get_decoder_state_size, soundpipe), Cint, ())
+end
 # Julia wrapper for header: soundpipe.h
 # Automatically generated using Clang.jl
 

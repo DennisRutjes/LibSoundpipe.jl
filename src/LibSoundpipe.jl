@@ -7,7 +7,9 @@ using CEnum
 include("ctypes.jl")
 export Ctm, Ctime_t, Cclock_t
 
-include(joinpath(@__DIR__, "Soundpipe_api.jl"))
+
+include(joinpath(@__DIR__, "soundpipe_base.jl"))
+include(joinpath(@__DIR__, "soundpipe_api.jl"))
 
 # export everything
 #foreach(names(@__MODULE__, all=true)) do s
